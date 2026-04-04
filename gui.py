@@ -81,10 +81,17 @@ class PyATEMSwitcherGui:
             self.buttons = {}
             log.debug("Button state cleared, creating buttons")
 
+
+            possibleInputs = {}
+            for _, value in enumerate(switcher.atem.videoSources):
+                if value.name.endswith("Direct") or value.name.endswith("Prev") or value.name.endswith("Prog") or value.name.endswith("Key"):
+                    continue
+                possibleInputs[value.name] = switcher.inputProperties[value.name]
+
             inputs = {}
-            for idx, i in enumerate(switcher.inputProperties):
+            for idx, i in possibleInputs.items():
                 if not i.shortName:
-                    break
+                    continue
                 if i.shortName.lower() in ("-", "empty", "x"):
                     continue
                 if f"in_{i.shortName}" in self.buttons:
