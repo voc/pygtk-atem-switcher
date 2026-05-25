@@ -1,15 +1,18 @@
 [atem]
-ip = '10.73.96.40'
-video_mode = '1080p50'
+ip = "10.73.4.40"
+video_mode = "1080p25"
 
-[atem.settings]
-
-
-[logging]
-# see https://docs.python.org/3/library/logging.html#levels
-level = 10
-format = '%(name)25s [%(levelname)-8s] %(message)s'
+[atem.settings.inputs]
+input1 = "Laptop"
+input3 = "Kamera"
+input2 = "VGA"
+input4 = "Infobeamer"
 
 [gtk-settings]
-gtk-theme-name = "Adwaita"
 gtk-application-prefer-dark-theme = true
+gtk-theme-name = "Adwaita"
+
+[logging]
+format = "%(name)25s [%(levelname)-8s] %(message)s"
+level = "DEBUG"
+
