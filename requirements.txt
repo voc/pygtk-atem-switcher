@@ -1,4 +1,4 @@
 PyATEMMax==1.0b9
-pycairo==1.23.0
-PyGObject==3.42.2
-rtoml==0.9.0
+pycairo==1.29.0
+PyGObject==3.56.3
+rtoml==0.13.0
